@@ -14,7 +14,7 @@ artifacts/
 logs/
 mlruns/
 runs/
-
+venv/
 # Model weights
 *.pt
 
