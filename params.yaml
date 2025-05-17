@@ -1,0 +1,10 @@
+# params.yaml
+# Data Processing Parameters
+train_ratio: 0.8
+
+# Model Training Parameters
+epochs: 25
+batch_size: 4
+learning_rate: 0.0001
+optimizer: Adam
+model_variant: yolov8n.pt # Specify the model variant here (e.g., yolov8n.pt, yolov8s.pt)

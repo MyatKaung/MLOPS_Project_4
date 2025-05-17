@@ -1,0 +1,40 @@
+# dvc.yaml
+
+# Define files containing parameters.
+params:
+  - params.yaml # This is correct
+
+stages:
+  data_ingestion:
+    cmd: python src/data_ingestion.py
+    deps:
+      - src/data_ingestion.py
+    outs:
+      - artifacts/raw/
+
+  data_processing:
+    cmd: python src/data_processing.py --raw_root artifacts/raw --yolo_base_dir artifacts/gun_dataset_yolo
+    deps:
+      - src/data_processing.py
+      - artifacts/raw/
+      - params.yaml  # Depend on the entire params file
+    params:
+      - train_ratio  # Specify the parameter key DVC should track from params.yaml
+    outs:
+      - artifacts/gun_dataset_yolo/
+
+  model_training:
+    cmd: python src/model_training.py --data_yaml_path artifacts/gun_dataset_yolo/data.yaml
+    deps:
+      - src/model_training.py
+      - src/model_architecture.py
+      - artifacts/gun_dataset_yolo/
+      - params.yaml # Depend on the entire params file
+    params:
+      - epochs        # Specify the parameter key
+      - batch_size    # Specify the parameter key
+      - learning_rate # Specify the parameter key
+      - optimizer     # Specify the parameter key
+      - model_variant # Specify the parameter key
+    outs:
+      - artifacts/models/

@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+venv/
+
+# DVC
+.dvc/
+.dvcignore
+dvc.lock
+
+# Artifacts and logs
+artifacts/
+logs/
+mlruns/
+runs/
+
+# Model weights
+*.pt
+
+# Environment/config
+.env
+
+# OS files
+.DS_Store
+Thumbs.db

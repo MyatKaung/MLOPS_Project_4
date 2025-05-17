@@ -1,0 +1,15 @@
+kagglehub
+pandas 
+numpy 
+matplotlib
+setuptools
+opencv-python-headless
+torch 
+ultralytics 
+scikit-learn 
+pyyaml
+mlflow
+dvc
+fastapi[all]
+uvicorn
+pillow
