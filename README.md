@@ -98,4 +98,9 @@ The project follows the structure outlined in the video series:
 Below is a preview of the FastAPI documentation UI
 
 ![FastAPI Swagger UI](images/mlops_project4.png)
+*FastAPI Swagger UI*
+
 ![Mlflow Tracking UI](images/mflow.png)
+*Status of Mlflow UI*
+
+
